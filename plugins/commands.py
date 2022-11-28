@@ -42,14 +42,11 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
+        InlineKeyboardButton('♻️Channel♻️', url='https://t.me/joinchat/ny0a-KDwQ1c4OTM9'),
+        InlineKeyboardButton('🔆Group🔆', url='https://t.me/joinchat/L8tqSA70VhxmZjQ9')
+    ],[
+        InlineKeyboardButton('☠Developer☠', url='https://t.me/RDX_mc_bot')
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
@@ -67,7 +64,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "Payment QR code", url= 'https://t.me/mc_subtitles_bot?start=63831bcbdb435'
                 )
             ]
         ]
@@ -81,21 +78,22 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**",
+            text="**Movie Cafe \n\nThis file will only be available to members with premium membership..you can take the membership through the link below..the amount for premium membership is ₹10 per month... \nphone pay UPI ID: sahilsaifudheen@ibl 
+ ask to payment ID:https://t.me/RDX_mc_bot \n\nIf you have paid the amount then you should share the screenshot of it through the link below 
+Link:  https://t.me/RDX_mc_bot  \n\nFor customer services you have to pay extra ₹5.... 
+For any queries, please click the link below 
+Link: https://t.me/RDX_mc_bot**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
+        InlineKeyboardButton('♻️Channel♻️', url='https://t.me/joinchat/ny0a-KDwQ1c4OTM9'),
+        InlineKeyboardButton('🔆Group🔆', url='https://t.me/joinchat/L8tqSA70VhxmZjQ9')
+    ],[
+        InlineKeyboardButton('☠Developer☠', url='https://t.me/RDX_mc_bot')
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
