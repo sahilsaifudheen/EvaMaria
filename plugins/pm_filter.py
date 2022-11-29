@@ -41,7 +41,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("🥵ബ്രോ , മറ്റുള്ളവർ റിക്വസ്റ്റ് ചെയിത മൂവിയിൽ കുത്തി നോക്കാതെ ബ്രോന് വേണ്ടത് ബ്രോ റിക്വസ്റ്റ് ചെയ്യുക.🤒 \n🥵A Bro , Search Your Own File , Don't Click Others Requested Files.🤒", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -91,20 +91,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
+            [InlineKeyboardButton("«««BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"📑 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+            [InlineKeyboardButton(f"📑 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("NEXT»»»", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("«««BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"📑 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("NEXT»»»", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -120,7 +120,7 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("okDa", show_alert=True)
+        return await query.answer("🥵ബ്രോ , മറ്റുള്ളവർ റിക്വസ്റ്റ് ചെയിത മൂവിയിൽ കുത്തി നോക്കാതെ ബ്രോന് വേണ്ടത് ബ്രോ റിക്വസ്റ്റ് ചെയ്യുക.🤒 \n🥵A Bro , Search Your Own File , Don't Click Others Requested Files.🤒", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
@@ -404,14 +404,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [
-            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria')
-        ], [
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
+        InlineKeyboardButton('♻️Channel♻️', url='https://t.me/joinchat/ny0a-KDwQ1c4OTM9'),
+        InlineKeyboardButton('🔆Group🔆', url='https://t.me/joinchat/L8tqSA70VhxmZjQ9')
+    ],[
+        InlineKeyboardButton('☠Developer☠', url='https://t.me/RDX_mc_bot')
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -421,15 +418,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
-            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
-        ], [
-            InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods', callback_data='extra')
-        ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔮 Status', callback_data='stats')
-        ]]
+        InlineKeyboardButton('♻️Channel♻️', url='https://t.me/joinchat/ny0a-KDwQ1c4OTM9'),
+        InlineKeyboardButton('🔆Group🔆', url='https://t.me/joinchat/L8tqSA70VhxmZjQ9')
+    ],[
+        InlineKeyboardButton('☠Developer☠', url='https://t.me/RDX_mc_bot')
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -438,12 +431,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/TeamEvamaria'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
-        ], [
-            InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('🔐 Close', callback_data='close_data')
-        ]]
+        InlineKeyboardButton('♻️Channel♻️', url='https://t.me/joinchat/ny0a-KDwQ1c4OTM9'),
+        InlineKeyboardButton('🔆Group🔆', url='https://t.me/joinchat/L8tqSA70VhxmZjQ9')
+    ],[
+        InlineKeyboardButton('☠Developer☠', url='https://t.me/RDX_mc_bot')
+    ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
@@ -666,12 +658,12 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text=f"📑 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="NEXT»»»", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="📑 1/1", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -708,7 +700,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"Here is what i found for your query {search}"
+        cap = f"<b>╭───♻movie Cafe 2♻️────〄\n│\n├🗂️Files :- Database Collection \n│\n├🛡Need help :- @RDX_mc_bot  </b>\n│\n├🎬Movie :- ⤵️\n│</b> <code>{search}</code>\n╰───────────〄"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -736,7 +728,7 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         k = await msg.reply("I couldn't find any movie in that name.")
-        await asyncio.sleep(8)
+        await asyncio.sleep(20)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
@@ -764,8 +756,8 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
-        await asyncio.sleep(8)
+        k = await msg.reply("I don't understand the name of the movie you mean. 𝘾𝙝𝙚𝙘𝙠 𝙩𝙝𝙖𝙩 𝙩𝙝𝙚 𝙨𝙥𝙚𝙡𝙡𝙞𝙣𝙜 𝙞𝙨 𝙘𝙤𝙧𝙧𝙚𝙘𝙩🤔")
+        await asyncio.sleep(20)
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
@@ -776,7 +768,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    await msg.reply("I couldn't find anything related to that\nDid you mean any one of these?",
+    await msg.reply("𝙉𝙤𝙩 𝙁𝙤𝙪𝙣𝙙 𝙄𝙣 𝘿𝙖𝙩𝙖𝘽𝙖𝙨𝙚😞 \nCHECK IF THE MOVIE HAS BEEN RELEASED AND IF THE SPELLING IS CORRECT THEN ASK THE MOVIE AGAIN",
                     reply_markup=InlineKeyboardMarkup(btn))
 
 
