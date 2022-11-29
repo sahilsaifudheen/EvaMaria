@@ -79,10 +79,7 @@ async def start(client, message):
         await client.send_message(
             chat_id=message.from_user.id,
             text="**Movie Cafe \n\nThis file will only be available to members with premium membership..you can take the membership through the link below..the amount for premium membership is ₹10 per month... \nphone pay UPI ID: sahilsaifudheen@ibl 
- ask to payment ID:https://t.me/RDX_mc_bot \n\nIf you have paid the amount then you should share the screenshot of it through the link below 
-Link:  https://t.me/RDX_mc_bot  \n\nFor customer services you have to pay extra ₹5.... 
-For any queries, please click the link below 
-Link: https://t.me/RDX_mc_bot**",
+ ask to payment ID:https://t.me/RDX_mc_bot \n\nIf you have paid the amount then you should share the screenshot of it through the link below \nLink:https://t.me/RDX_mc_bot  \n\nFor customer services you have to pay extra ₹5.... For any queries, please click the link below \nLink:https://t.me/RDX_mc_bot**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
